@@ -25,6 +25,7 @@ public class BlockServiceImpl  implements BlockService {
 
     @Override
     public String calculerHash( Block block)  {
+
         return Utils.sha256(block.AllDataBlock());
     }
 

@@ -19,12 +19,15 @@ public class BlockchainController {
     }
     @GetMapping(path = "/{id}")
     public  BlockChain getBlockchainById(@PathVariable long id ){
+
         return  blockchainservice.getBlockChain(id);
     }
 
+
     @GetMapping(path = "/minerBlock")
     public void minerBlock(@RequestBody MinerBlockRequestDto request ){
-        blockchainservice.addBlock(request.getIdBlock(),request.getIdBlockchain(),request.getPendingTransactions());
+        blockchainservice.addBlock(request.getIdMiner(),
+                request.getIdBlockchain(),request.getPendingTransactions());
     }
 
     @GetMapping(path = "/isValid/{id}")

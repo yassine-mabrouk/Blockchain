@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 public class MinerBlockRequestDto {
-    long idBlock;
+    long idMiner;
     long idBlockchain;
     List<Transaction> pendingTransactions;
 }

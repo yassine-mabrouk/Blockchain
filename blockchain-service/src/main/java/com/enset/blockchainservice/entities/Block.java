@@ -23,13 +23,11 @@ public class Block {
     private String previousHach;
     private long nonce;
     private int indexBlock;
-
     @OneToMany(mappedBy = "block", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Collection<Transaction> transactions;
     @JsonProperty(access= JsonProperty.Access.WRITE_ONLY)
     @ManyToOne
     private BlockChain blockChain ;
-
     @Override
     public int hashCode() {
         return Objects.hash(getTransactions());
